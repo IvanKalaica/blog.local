@@ -50,7 +50,8 @@ class DB {
     //takes an array of data, where the keys in the array are the column names
     //and the values are the data that will be inserted into those columns.
     //$table is the name of the table and $where is the sql where clause.
-    public function update($data, $table, $where) {
+    public function update($data, $table, $where) 
+    {
         foreach ($data as $column => $value) {
             $sql = "UPDATE $table SET $column = $value WHERE $where";
             mysql_query($sql) or die(mysql_error());
@@ -83,5 +84,3 @@ class DB {
     }
 
 }
-
-?>

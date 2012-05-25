@@ -4,12 +4,11 @@
 //index.php
 
 $page_title = "About";
-$current_page = "about";
 
 //Load header  
-include_once('./includes/header.php');
+require_once('./includes/header.php');
 ?>
 
 About...
 
-<?php include_once('./includes/footer.php'); ?> 
+<?php require_once('./includes/footer.php'); ?> 

@@ -34,10 +34,9 @@ if (isset($_POST['submit-settings'])) {
 //settings.php
 
 $page_title = "Settings";
-$current_page = "settings";
 
 //Load header  
-include_once('./includes/header.php');
+require_once('./includes/header.php');
 ?>
 
 
@@ -50,4 +49,4 @@ include_once('./includes/header.php');
 
 </form>
 
-<?php include_once('./includes/footer.php'); ?>
+<?php require_once('./includes/footer.php'); ?>

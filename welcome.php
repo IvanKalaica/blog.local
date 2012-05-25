@@ -16,13 +16,12 @@ $user = unserialize($_SESSION['user']);
 //settings.php
 
 $page_title = "Welcome";
-$current_page = "welcome";
 
 //Load header  
-include_once('./includes/header.php');
+require_once('./includes/header.php');
 ?>
 
 <title>Welcome <?php echo $user->username; ?></title>
 Hey there, <?php echo $user->username; ?>. You've been registered and logged in. Welcome! <a href="logout.php">Log Out</a> | <a href="index.php">Return to Homepage</a>
 
-<?php include_once('./includes/footer.php'); ?>
+<?php require_once('./includes/footer.php'); ?>

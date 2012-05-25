@@ -65,10 +65,9 @@ if (isset($_POST['submit-form'])) {
 //register.php
 
 $page_title = "Register";
-$current_page = "register";
 
 //Load header  
-include_once('./includes/header.php');
+require_once('./includes/header.php');
 ?>
 
 
@@ -84,4 +83,4 @@ include_once('./includes/header.php');
 </form>
 
 
-<?php include_once('./includes/footer.php'); ?>
+<?php require_once('./includes/footer.php'); ?>

@@ -27,10 +27,9 @@ if (isset($_POST['submit-login'])) {
 //login.php
 
 $page_title = "Login";
-$current_page = "login";
 
 //Load header  
-include_once('./includes/header.php');
+require_once('./includes/header.php');
 ?>
 
 <?php
@@ -45,4 +44,4 @@ if ($error != "") {
     <input type="submit" value="Login" name="submit-login" />
 </form>
 
-<?php include_once('./includes/footer.php'); ?> 
+<?php require_once('./includes/footer.php'); ?> 

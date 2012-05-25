@@ -3,6 +3,10 @@ require_once 'classes/User.class.php';
 require_once 'classes/UserTools.class.php';
 require_once 'classes/DB.class.php';
 
+function getSiteBaseUrl($path) {
+    return 'http://blog.local/'.$path;
+}
+
 //connect to the database
 $db = new DB();
 $db->connect();
