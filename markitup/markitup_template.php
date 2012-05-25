@@ -33,6 +33,6 @@
 </script>
 
 <textarea id="markItUp" cols="80" rows="20">
-    <?php echo $post->content; ?>
+<?php echo $post->content; ?>
 </textarea>
 </p>
