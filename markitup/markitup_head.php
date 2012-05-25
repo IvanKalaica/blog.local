@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" type="text/css" href="images/style.css" /> -->
+<link rel="stylesheet" type="text/css" href="images/style.css" />
 
 <!-- jQuery -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script>

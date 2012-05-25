@@ -6,10 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
         <title><?php echo $page_title; ?></title>  
-
-        <?php require_once('./markitup/markitup_head.php'); ?> 
-
         <link rel="stylesheet" href="styles/global.css" type="text/css" />
-
+        <?php require_once('./markitup/markitup_head.php'); ?>
 
     </head> 
