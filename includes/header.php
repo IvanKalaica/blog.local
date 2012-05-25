@@ -19,11 +19,11 @@
 
                         <?php if (isset($_SESSION['logged_in'])) : ?>
                             <?php $user = unserialize($_SESSION['user']); ?>
-                            <li <?php if ($current_page == "logout") { ?>id="active"<?php } ?> class="logout"><a href="logout.php">Logout</a></li>
                             <li <?php if ($current_page == "settings") { ?>id="active"<?php } ?> class="settings"><a href="settings.php">Settings</a></li>
+                            <li <?php if ($current_page == "logout") { ?>id="active"<?php } ?> class="logout"><a href="logout.php">Logout</a></li>
                         <?php else : ?>
-                            <li <?php if ($current_page == "login") { ?>id="active"<?php } ?> class="login"><a href="login.php">Log In</a></li>
                             <li <?php if ($current_page == "register") { ?>id="active"<?php } ?> class="register"><a href="register.php">Register</a></li>
+                            <li <?php if ($current_page == "login") { ?>id="active"<?php } ?> class="login"><a href="login.php">Log In</a></li>
                         <?php endif; ?>
                     </ul>
                 </div>
