@@ -1,5 +1,6 @@
 <?php
 require_once 'classes/User.class.php';
+require_once 'classes/Post.class.php';
 require_once 'classes/UserTools.class.php';
 require_once 'classes/DB.class.php';
 

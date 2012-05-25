@@ -57,6 +57,17 @@ class UserTools {
         return new User($result);
     }
 
+    public function getUserForPostId($id) {
+        if (!$id) {
+            return null;
+        }
+
+        $sql = "SELECT * FROM users INNER JOIN user_posts ON users.id=user_posts.user_id WHERE user_posts.id=$id";
+        $db = new DB();
+        $result = $db->returnFirstWithSQL($sql);
+        return new User($result);
+    }
+
 }
 
 ?>
