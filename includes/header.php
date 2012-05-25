@@ -16,6 +16,8 @@
                     <ul id="navlist">  
                         
                         <?php $current_page = substr(str_replace('.php', '', $_SERVER['REQUEST_URI']), 1) ?>
+                        <!-- <pre><?php print_r($_SERVER) ?></pre> -->
+                         
                         
                         <li <?php if ($current_page == "index") { ?>id="active"<?php } ?> class="home"><a href="index.php">Home</a></li>  
                         <li <?php if ($current_page == "about") { ?>id="active"<?php } ?> class="about"><a href="about.php">About</a></li>  
