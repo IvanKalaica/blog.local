@@ -7,5 +7,9 @@
 
         <title><?php echo $page_title; ?></title>  
 
+        <?php require_once('./markitup/markitup_head.php'); ?> 
+
         <link rel="stylesheet" href="styles/global.css" type="text/css" />
+
+
     </head> 
