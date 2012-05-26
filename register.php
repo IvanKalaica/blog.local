@@ -21,11 +21,11 @@ if (isset($_POST['submit-form'])) {
 
     //initialize variables for form validation
     $success = true;
-    $userTools = new UserTools();
+    $usersController = new UsersController();
 
     //validate that the form was filled out correctly
     //check to see if user name already exists
-    if ($userTools->checkUsernameExists($username)) {
+    if ($usersController->checkUsernameExists($username)) {
         $error .= "That username is already taken.<br/> \n\r";
         $success = false;
     }
@@ -49,7 +49,7 @@ if (isset($_POST['submit-form'])) {
         $newUser->save(true);
 
         //log them in
-        $userTools->login($username, $password);
+        $usersController->login($username, $password);
 
         //redirect them to a welcome page
         header("Location: welcome.php");

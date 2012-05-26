@@ -1,11 +1,11 @@
 <?php
 
-//UserTools.class.php
+//UsersController.class.php
 
 require_once 'User.class.php';
 require_once 'DB.class.php';
 
-class UserTools {
+class UsersController {
 
     //Log the user in. First checks to see if the
     //username and password match a row in the database.
@@ -66,6 +66,21 @@ class UserTools {
         $db = new DB();
         $result = $db->returnFirstWithSQL($sql);
         return new User($result);
+    }
+    
+        public function getAllUsers($param) {
+
+        $db = new DB();
+        $results = $db->select('users', null);
+        $array = array();
+
+        foreach ($results as $result)
+        {
+            $user = new User($result);
+            array_push($array, $user);
+        }
+        
+        return $array;
     }
 
 }

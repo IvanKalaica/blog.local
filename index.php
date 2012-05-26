@@ -9,21 +9,53 @@ $page_title = "Home";
 require_once('./includes/header.php');
 ?>
 
-<?php if (isset($_SESSION['logged_in'])) : ?>
+<?php if ($isLoggedIn) : ?>
 
-    <?php $user = unserialize($_SESSION['user']); ?>
-
-    Hello, <?php echo $user->username; ?>. You are logged in.
+    Hello, <?php echo $currentUser->username; ?>. You are logged in.
 
 <?php else : ?>
 
-    
 
 <?php endif; ?>
 
-</br>
-<br>
-Display posts here...
-</br>
+<?php
+$postsController = new PostsController();
+$posts = $postsController->getAllPosts(null);
+?>
+
+<?php foreach ($posts as $postData): ?>
+
+    <?php
+    $usersController = new UsersController();
+    $postUser = $usersController->getUserForPostId($postData->id);
+    ?>
+
+    <h2>
+        <?php echo $postData->title; ?>
+    </h2>
+
+    <div>
+        <?php if ($isLoggedIn) { ?>
+            <a href="<?php echo getSiteBaseUrl('post.php') ?>?id=<?php echo $postData->id; ?>" >Edit</a>
+        <?php } ?>
+    </div>
+
+    <div>
+        Created at : 
+        <?php echo $postData->created_at; ?>
+    </div>
+
+    <div>
+        Author : 
+        <a href="<?php echo getSiteBaseUrl('profile.php') ?>?id=<?php echo $postUser->id; ?>" ><?php echo $postUser->username; ?></a>
+    </div>
+
+    <div>
+        <?php echo $postData->content; ?>
+    </div>
+
+    </hr><hr width=100%>
+
+<?php endforeach; ?>
 
 <?php require_once('./includes/footer.php'); ?> 

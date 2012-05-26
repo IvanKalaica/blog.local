@@ -13,8 +13,8 @@ if (isset($_POST['submit-login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $userTools = new UserTools();
-    if ($userTools->login($username, $password)) {
+    $usersController = new UsersController();
+    if ($usersController->login($username, $password)) {
         //successful login, redirect them to a page
         header("Location: index.php");
     } else {

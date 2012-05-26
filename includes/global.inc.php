@@ -2,7 +2,8 @@
 
 require_once 'classes/User.class.php';
 require_once 'classes/Post.class.php';
-require_once 'classes/UserTools.class.php';
+require_once 'classes/UsersController.class.php';
+require_once 'classes/PostsController.class.php';
 require_once 'classes/DB.class.php';
 
 function getSiteBaseUrl($path) {
@@ -13,17 +14,18 @@ function getSiteBaseUrl($path) {
 $db = new DB();
 $db->connect();
 
-//initialize UserTools object
-$userTools = new UserTools();
+//initialize UsersController object
+$usersController = new UsersController();
 
 //start the session
 session_start();
 
 $isLoggedIn = isset($_SESSION['logged_in']);
+$currentUser = null;
 
 //refresh session variables if logged in
 if ($isLoggedIn) {
-    $user = unserialize($_SESSION['user']);
-    $_SESSION['user'] = serialize($userTools->get($user->id));
+    $currentUser = unserialize($_SESSION['user']);
+    $_SESSION['user'] = serialize($usersController->get($currentUser->id));
 }
 ?>

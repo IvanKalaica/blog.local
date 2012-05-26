@@ -2,8 +2,8 @@
 //logout.php
 require_once 'includes/global.inc.php';
 
-$userTools = new UserTools();
-$userTools->logout();
+$usersController = new UsersController();
+$usersController->logout();
 
 header("Location: index.php");
 
