@@ -44,7 +44,7 @@ require_once('./includes/header.php');
 
 <form action="settings.php" method="post">
 
-    E-Mail: <input type="text" value="<?php echo $email; ?>" name="email" /><br/>
+    E-Mail: <input type="text" value="<?php echo $email; ?>" name="email" /><br/><br/>
     <input type="submit" value="Update" name="submit-settings" />
 
 </form>

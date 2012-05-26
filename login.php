@@ -38,9 +38,14 @@ if ($error != "") {
 }
 ?>
 
+
+Don't have account? Register <a href="<?php echo getSiteBaseUrl('register.php') ?>">here</a>!
+<br></br>
+
 <form action="login.php" method="post">
     Username: <input type="text" name="username" value="<?php echo $username; ?>" /><br/>
     Password: <input type="password" name="password" value="<?php echo $password; ?>" /><br/>
+    </br>
     <input type="submit" value="Login" name="submit-login" />
 </form>
 

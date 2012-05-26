@@ -9,6 +9,9 @@ $page_title = "About";
 require_once('./includes/header.php');
 ?>
 
-About...
+
+<br>
+Simple blog written in PHP. Playing around with NetBeans... :)
+</br>
 
 <?php require_once('./includes/footer.php'); ?> 
