@@ -2,12 +2,14 @@
 
 <?php
 //profile.php
-$page_title = "Profile";
-//Load header  
-require_once('./includes/header.php');
 
 $userTools = new UserTools();
 $user = $userTools->get($_GET["id"]);
+
+$page_title = $user->username."'s profile";
+//Load header  
+require_once('./includes/header.php');
+
 ?>
 
 You are on profile with id <?php echo $user; ?>!

@@ -28,7 +28,7 @@
         <?php if ($current_page != "login") { ?> <a href="login.php">Log In</a><?php } ?>
     <?php endif; ?>
 
-    </br><h1><?php echo $current_page; ?></h1>
+    </br><h1><?php echo $page_title; ?></h1>
 
     </hr><hr width=100%>
 
