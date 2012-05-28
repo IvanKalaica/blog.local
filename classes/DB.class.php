@@ -6,13 +6,18 @@ class DB {
 
     protected $db_name = 'blog';
     protected $db_user = 'root';
-    protected $db_pass = '';
-    protected $db_host = 'localhost';
+    protected $db_pass = 'root';
+    protected $db_host = 'localhost:/Applications/MAMP/tmp/mysql/mysql.sock';
 
 //open a connection to the database. Make sure this is called
 //on every page that needs to use the database.
     public function connect() {
         $connection = mysql_connect($this->db_host, $this->db_user, $this->db_pass);
+
+        if (!$connection) {
+            die('Could not connect: ' . mysql_error());
+        }
+
         mysql_select_db($this->db_name);
 
         return true;

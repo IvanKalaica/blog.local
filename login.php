@@ -16,7 +16,7 @@ if (isset($_POST['submit-login'])) {
     $usersController = new UsersController();
     if ($usersController->login($username, $password)) {
         //successful login, redirect them to a page
-        header("Location: index.php");
+        header("Location: dashboard.php");
     } else {
         $error = "Incorrect username or password. Please try again.";
     }
