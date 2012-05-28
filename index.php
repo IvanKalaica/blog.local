@@ -23,26 +23,26 @@ $postsController = new PostsController();
 $posts = $postsController->getAllPosts(null);
 ?>
 
-<?php foreach ($posts as $postData): ?>
+<?php foreach ($posts as $post): ?>
 
     <?php
     $usersController = new UsersController();
-    $postUser = $usersController->getUserForPostId($postData->id);
+    $postUser = $usersController->getUserForPostId($post->id);
     ?>
 
     <h2>
-        <?php echo $postData->title; ?>
+        <?php echo $post->title; ?>
     </h2>
 
     <div>
         <?php if ($isLoggedIn) { ?>
-            <a href="<?php echo getSiteBaseUrl('post.php') ?>?id=<?php echo $postData->id; ?>" >Edit</a>
+            <a href="<?php echo getSiteBaseUrl('post.php') ?>?id=<?php echo $post->id; ?>" >Edit</a>
         <?php } ?>
     </div>
 
     <div>
         Created at : 
-        <?php echo $postData->created_at; ?>
+        <?php echo $post->created_at; ?>
     </div>
 
     <div>
@@ -51,7 +51,7 @@ $posts = $postsController->getAllPosts(null);
     </div>
 
     <div>
-        <?php echo $postData->content; ?>
+        <?php echo $post->content; ?>
     </div>
 
     </hr><hr width=100%>
